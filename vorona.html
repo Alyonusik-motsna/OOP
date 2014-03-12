@@ -1,0 +1,37 @@
+#include <string.h>
+
+class vorona
+
+{
+protected:
+Char*name;
+char*rid;
+char*vaga;
+
+public:
+vorona();
+vorona(char*newname;char*newrid;char*newvaga);
+};
+vorona::vorona()
+
+{
+ name=new char [11];
+ name[0]=0;
+ rid=new char [11];
+ rid[0]=0;
+ vaga=0;
+}
+
+vorona::vorona(char*newname;char*newrid;char*newvaga)
+{
+ int n=strlen(newname)
+ name=newchar[n+1];
+ strncpy(name,newname,n);
+ int n=strlen(newnrid)
+ rid=newchar[n+1];
+ strncpy(rid,newrid,n);
+ int n=strlen(newvaga)
+ vaga=newchar[n+1];
+ strncpy(vaga,newvaga,n);
+}
+ 
