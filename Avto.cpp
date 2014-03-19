@@ -6,15 +6,15 @@ using namespace std;
 class AVTO
 {
 protected:
-char*brand;   // марка
-int power;                  // мощность
-float cost;                  // стоимость
+char*brand; // ìàðêà
+int power; // ìîùíîñòü
+float cost; // ñòîèìîñòü
 
 
 public:
-AVTO();		    // конструктор без параметров
-AVTO(char*,int,float);     // конструктор с параметрами
-AVTO(const AVTO&);  //конструктор копирования
+AVTO(); // êîíñòðóêòîð áåç ïàðàìåòðîâ
+AVTO(char*,int,float); // êîíñòðóêòîð ñ ïàðàìåòðàìè
+AVTO(const AVTO&); //êîíñòðóêòîð êîïèðîâàíèÿ
 
 ~AVTO();
 char * GetBrand() ;
@@ -24,14 +24,12 @@ void SetBrand(char*);
 void SetPower(int);
 void SetCost(float);
 void Set(char*,int,float);
-void Show(); 
-   {
-cout << "("<< brand <<","<< power <<","<< cost <<")";
+
+cout << "("<< brand <<","<< power <<","<< cost <<")"<<;
    }
 };
 
 AVTO::AVTO()
-
 {
 brand=new char[30];
 brand[0]=0;
@@ -41,7 +39,7 @@ cost=0;
 cout << "konstruktor bez parametriv" << endl;
     }
 
-ceh::ceh(char*new_brand, char*new_power, int new_cost)
+Avto::Avto(char*new_brand, char*new_power, int new_cost)
 {
 int n=strlen(new_brand);
 brand=new char[n+1];
@@ -84,13 +82,13 @@ brand[n]=0;
 
 char*get Brand()
 {
-char*&=new char[strlen(brand)+1];
-strcpy(&,brand,strlen(brand));
-&=[strlen(brand)]=0;
-return &;
+char*s=new char[strlen(brand)+1];
+strcpy(s,brand,strlen(brand));
+s=[strlen(brand)]=0;
+return s;
 }
 
-void ceh::set Power(char*power)
+void Avto::SetPower(char*power)
 {
 if (power) delete[]power;
 int n=strlen(new_power);
@@ -99,15 +97,15 @@ strncpy(power,new_power,n);
 power[n]=0;
 }
 
-char*get Power()
+char*getPower()
 {
-char*&=new char[strlen(power)+1];
-strcpy(&,power,strlen(power));
-&=[strlen(power)]=0;
-return &;
+char*s=new char[strlen(power)+1];
+strcpy(s,power,strlen(power));
+s=[strlen(power)]=0;
+return s;
 }
 
-void ceh::set Cost(char*cost)
+void ceh::setCost(char*cost)
 {
 if (cost) delete[]cost;
 int n=strlen(new_cost);
@@ -116,23 +114,22 @@ strncpy(cost,new_cost,n);
 cost[n]=0;
 }
 
-char*get Cost()
+char*getCost()
 {
 // return cost;
-char*&=new char[strlen(cost)+1];
-strcpy(&,cost,strlen(cost));
-&=[strlen(cost)]=0;
-return &;
+char*s=new char[strlen(cost)+1];
+strcpy(s,cost,strlen(cost));
+s=[strlen(cost)]=0;
+return s;
 }
 
 main()
 {
-Avto A1;
-Avto A2(Lexus,Audi,5);
+Avto A2("Lexus","Audi",5);
 A1.show();
 A2.show();
-Avto*p=new ceh;
-Avto(Hyundai,BMW,9);
+Avto*p=new Avto ();
+Avto A1("Hyundai","BMW",9);
 p -> show();
 system("pause");
 return EXIT_SUCCESS;
