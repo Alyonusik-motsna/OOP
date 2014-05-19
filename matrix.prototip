@@ -1,38 +1,25 @@
-class matrix
+using namespace std;
+class Matrix
 {
-private:
-   double **a;
-   int n, m;
-public:
-   // матрица без элементов
-   matrix ()
-   {
-      a = 0;
-      n = 0;
-      m = 0;
-   }
-   
-   matrix (int N, int M, bool E = 0) // матриця NxM, якщо E, то одинична, інакше нульва
-
-
-
-   matrix add (matrix & a, matrix & b)  // додавання двох матриць
-
-
-
-   matrix mul (matrix & a, double k)// перемножити матрицю на число
-
-
-
-   matrix mul (matrix & a, matrix & b) // перемножити дві матриці 
- 
- 
- 
-   void swapRows (int index1, int index2)   // змінити місцями дві матриці
-   
-   
-   matrix inverse (  Matrix & a, Matrix & b ) // обернена матриця
-
-
-
-   matrix minus ( Matrix & a,  Matrix & b) // віднімання матриць
+  protected:
+           int k_ryadkiv;
+           int k_stovpciv;
+           double **a;
+    public:
+            Matrix ();
+            Matrix (int n_ryadkiv,int m_stovpciv);
+            Matrix (int n_ryadkiv,int m_stovpciv, int **b);
+            Matrix (const Matrix &m);
+            Matrix operator + (Matrix &b); // оператор додавання
+            friend Matrix operator * (Matrix &a, Matrix &b); // оператор множення
+            Matrix operator - (Matrix &b);
+            Matrix operator = (Matrix &b); // оператор присвоєння
+            Matrix inverse (); // обернена матриця
+            Matrix determinant () // детермінант
+            double GetCoef (int x, int y);
+            void SetCoef (int x, int y, double v);
+            void Show ();
+            friend ostream&operator << (osream &os, Matrix &a)
+            void Print ();
+            
+};
